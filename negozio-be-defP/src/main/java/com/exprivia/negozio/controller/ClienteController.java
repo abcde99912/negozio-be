@@ -57,7 +57,7 @@ public class ClienteController {
 		cliente.setCognomeCli(dettagliCliente.getCognomeCli());
 		cliente.setEmailCli(dettagliCliente.getEmailCli());
 		cliente.setIndirizzoCli(dettagliCliente.getIndirizzoCli());
-	    cliente.setDataUltimaModifica(LocalDateTime.now());
+	    	cliente.setDataUltimaModifica(LocalDateTime.now());
 		Cliente updatedCliente = clienteRepository.save(cliente);
 		return ResponseEntity.ok(updatedCliente);
 	}
