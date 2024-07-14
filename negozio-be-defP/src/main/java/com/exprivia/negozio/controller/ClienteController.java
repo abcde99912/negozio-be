@@ -1,5 +1,6 @@
 package com.exprivia.negozio.controller;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -56,6 +57,7 @@ public class ClienteController {
 		cliente.setCognomeCli(dettagliCliente.getCognomeCli());
 		cliente.setEmailCli(dettagliCliente.getEmailCli());
 		cliente.setIndirizzoCli(dettagliCliente.getIndirizzoCli());
+	    cliente.setDataUltimaModifica(LocalDateTime.now());
 		Cliente updatedCliente = clienteRepository.save(cliente);
 		return ResponseEntity.ok(updatedCliente);
 	}
