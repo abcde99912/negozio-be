@@ -1,5 +1,6 @@
 package com.exprivia.negozio.model;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Set;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -47,15 +48,17 @@ public class Cliente{
 	@Column(name = "dataCreCli")
 	private Date dataCreCli;
 
+	@Column(name = "dataUltimaModifica")
+    	private LocalDateTime dataUltimaModifica;
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="profiloCliente"
 	)
 	private ProfiloCli profiloCli;
 	
 	@JsonIgnore 
-    @OneToMany(mappedBy = "idCliente")
-    private Set<Ordini> ordini;
-
+    	@OneToMany(mappedBy = "idCliente")
+    	private Set<Ordini> ordini;
 	}	
 
 
